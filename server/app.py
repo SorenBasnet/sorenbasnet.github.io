@@ -23,3 +23,7 @@ app = Flask(__name__)
 def hello_world():
     return jsonify('Hello, World!')
 
+@app.route("/jokes") 
+def send_jokes(): 
+    return jsonify("data") 
+

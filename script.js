@@ -22,21 +22,21 @@ async function pullJokes(){
     let data = await jokesFetch(category, language, number);
 
 
-
     writeJoke(data)
 }
 
 function writeJoke(data){ 
 
     let displayDiv = document.querySelector('#jokesDisplay'); 
-
-    for (let a_data of data) {
-        // a_quote is a dictionary with 2 keys: quote and author
-        let dataP = document.createElement("p");
-        dataP.classList = "p";
-        dataP.innerHTML = a_data
-        displayDiv.appendChild(dataP);
-    }
+    displayDiv.innerText = data;
+    
+    // for (let a_data of data) {
+    //     // a_quote is a dictionary with 2 keys: quote and author
+    //     let dataP = document.createElement("p");
+    //     dataP.classList = "p";
+    //     dataP.innerHTML = a_data
+    //     displayDiv.appendChild(dataP);
+    // }
 
 }
 

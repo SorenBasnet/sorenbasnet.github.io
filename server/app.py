@@ -19,7 +19,7 @@ def send_jokess(cat, lang):
         jokes.append(pyjokes.get_joke(lang, cat))
         return jsonify(jokes)
     except: 
-        abort(404)
+        return jsonify("error")
 
 
 @app.route("/jokes")

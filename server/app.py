@@ -16,19 +16,25 @@
 #     print("hello")
 #     app.run() 
 
+import pyjokes
 from flask import Flask, jsonify
-from flask_cors import CORS 
+from flask_cors import CORS
+
 
 app = Flask(__name__)
 CORS(app)
+
 
 @app.route('/')
 def hello_world():
     return jsonify('Hello, World!')
 
-@app.route("/jokes") 
-def send_jokes(): 
-    return jsonify("data") 
+
+@app.route("/jokes")
+def send_jokes():
+    joke = pyjokes.get_joke("en", "chuck")
+    return jsonify(joke)
+
 
 if __name__ == "__main__": 
     app.run()

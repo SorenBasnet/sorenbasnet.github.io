@@ -20,9 +20,8 @@ def hello_world():
 def send_jokess(cat, lang, num):
 
     jokes = []
-
-    for i in range(num):
-        jokes.append(pyjokes.get_joke(lang, cat))
+ 
+    jokes.append(pyjokes.get_joke(lang, cat))
 
     return jsonify(jokes)
 

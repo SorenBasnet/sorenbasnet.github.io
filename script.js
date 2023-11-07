@@ -18,18 +18,20 @@ async function pullJokes(){
     let language = document.querySelector("#languages").value; 
     let number = document.querySelector('#numbers').value;
 
-
+    for(let i = 0; i < parseInt(number); i++){
     let data = await jokesFetch(category, language, number);
-
-
     writeJoke(data)
+    }
+
+
+   
 }
 
 function writeJoke(data){ 
 
     let displayDiv = document.querySelector('#jokesDisplay'); 
     displayDiv.innerText = data;
-    
+
     // for (let a_data of data) {
     //     // a_quote is a dictionary with 2 keys: quote and author
     //     let dataP = document.createElement("p");

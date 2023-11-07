@@ -1,5 +1,5 @@
 import pyjokes
-from flask import Flask, jsonify
+from flask import Flask, jsonify, abort
 from flask_cors import CORS
 
 
@@ -14,12 +14,12 @@ def hello_world():
 
 @app.route('/v1/jokes/<lang>/<cat>/<num>', methods=['GET'])
 def send_jokess(cat, lang):
-
     jokes = []
-
-    jokes.append(pyjokes.get_joke(lang, cat))
-
-    return jsonify(jokes)
+    try:
+        jokes.append(pyjokes.get_joke(lang, cat))
+        return jsonify(jokes)
+    except: 
+        abort(404)
 
 
 @app.route("/jokes")

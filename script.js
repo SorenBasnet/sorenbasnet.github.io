@@ -3,7 +3,7 @@
 
 var categories = ["all", "neutral", "chuck"];
 var languages = ["en","es","de"];
-// var numbers = ["1", "5" ,"10"];
+var numbers = ["1", "5" ,"10"];
 
 async function jokesFetch(cat, lang, num){ 
 
@@ -16,23 +16,24 @@ async function pullJokes(){
 
     let category = document.querySelector("#categories").value; 
     let language = document.querySelector("#languages").value; 
-    let number = document.querySelector('#id').value;
+    let id = document.querySelector('#id').value;
+    let number = document.querySelector('#numbers').value;
     let displayDiv = document.querySelector('#jokesDisplay'); 
     displayDiv.innerHTML = "";
 
-    if(number == null){
+    // if(number == null){
 
-        displayDiv.innerText = 'Id Needed !';
+    //     displayDiv.innerText = 'Id Needed !';
 
-    }
-    else{
+    // }
+    // else{
         for(let i = 0; i < parseInt(number); i++){
             let data = await jokesFetch(language, category, number);
             
             writeJoke(data)
             }
 
-    }
+    // }
 
    
 
@@ -69,7 +70,7 @@ function populateSelect(selectId, list){
 window.onload = function () { 
 
     populateSelect("categories", categories); 
-    // populateSelect("numbers", numbers); 
+    populateSelect("numbers", numbers); 
     populateSelect("languages", languages);
 
 }

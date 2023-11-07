@@ -14,9 +14,11 @@ def hello_world():
 
 @app.route('/v1/jokes/<lang>/<cat>/<num>', methods=['GET'])
 def send_jokess(cat, lang):
-    jokes = []
-    jokes.append(pyjokes.get_joke(lang, cat))
-    return jsonify(jokes)
+    # jokes = []
+    # jokes.append(pyjokes.get_joke(lang, cat))
+    # return jsonify(jokes)
+
+    return jsonify("www")
     
 
 

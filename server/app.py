@@ -13,4 +13,5 @@ def send_jokesNum():
     return jsonify("jokes but numberred"); 
 
 if __name__ == "main": 
+    print("hello")
     app.run() 

@@ -13,7 +13,7 @@ def hello_world():
 
 
 @app.route('/v1/jokes')
-def send_jokess(cat, lang):
+def send_jokess():
 
     
     # jokes = []

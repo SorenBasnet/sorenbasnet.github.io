@@ -24,15 +24,19 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+categories = ["all", "neutral", "chuck"]
+languages = ["en", "es", "de"]
+numbers = ["1", "5", "10"]
+
 
 @app.route('/')
 def hello_world():
     return jsonify('Hello, World!')
 
 
-@app.route('/v1/jokes/<en>', methods=['GET'])
-def send_jokess(en):
-    return jsonify("12345")
+@app.route('/v1/jokes/<cat>/<lang>/<num>', methods=['GET'])
+def send_jokess(cat, lang, num):
+    return jsonify(pyjokes.get_joke(lang, cat))
 
 
 @app.route("/jokes")

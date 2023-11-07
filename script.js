@@ -5,9 +5,9 @@ var categories = ["all", "neutral", "chuck"];
 var languages = ["en","es","de"];
 var numbers = ["1", "5" ,"10"];
 
-async function jokesFetch(){ 
+async function jokesFetch(cat, lang, num){ 
 
-    return fetch('https://cs-jokes.onrender.com/jokes').then(response => response.json()).catch(error => console.error(error)); 
+    return fetch(`https://cs-jokes.onrender.com/v1/jokes/${cat}/${lang}/${num}`).then(response => response.json()).catch(error => console.error(error)); 
 
 }
 
@@ -19,7 +19,7 @@ async function pullJokes(){
     let number = document.querySelector('#numbers').value;
 
 
-    let data = await jokesFetch();
+    let data = await jokesFetch(category, language, number);
 
 
 
@@ -31,13 +31,6 @@ function writeJoke(data){
     let displayDiv = document.querySelector('#jokesDisplay'); 
 
     displayDiv.innerText = data;
-   
-
-
-
-
-
-
 
 }
 

@@ -15,11 +15,10 @@ def hello_world():
 @app.route('/v1/jokes/<lang>/<cat>/<num>', methods=['GET'])
 def send_jokess(cat, lang):
     jokes = []
-    try:
-        jokes.append(pyjokes.get_joke(lang, cat))
-        return jsonify(jokes)
-    except: 
-        return jsonify("error")
+    jokes.append(pyjokes.get_joke(lang, cat))
+    return jsonify(jokes)
+    
+
 
 
 @app.route("/jokes")

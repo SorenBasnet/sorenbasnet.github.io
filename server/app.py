@@ -30,6 +30,11 @@ def hello_world():
     return jsonify('Hello, World!')
 
 
+@app.route('/v1/jokes/<en>/<cat>/<num>')
+def send_jokess():
+    return jsonify("12345")
+
+
 @app.route("/jokes")
 def send_jokes():
     joke = pyjokes.get_joke("en", "chuck")

@@ -5,21 +5,33 @@ var categories = ["all", "neutral", "chuck"];
 var languages = ["en","es","de"];
 var numbers = ["1", "5" ,"10"];
 
+async function jokesFetch(){ 
 
-async function pullJokes(){ 
-    console.log("Hello");
-    let data = await fetch('https://cs-jokes.onrender.com').then(response => response.json()).catch(error => console.error(error)); 
-    console.log(data);
+    return fetch('https://cs-jokes.onrender.com/jokes').then(response => response.json()).catch(error => console.error(error)); 
 
-    writeJoke()
 }
 
-function writeJoke(){ 
+
+async function pullJokes(){ 
+
+    let category = document.querySelector("#categories").value; 
+    let language = document.querySelector("#languages").value; 
+    let number = document.querySelector('#numbers').value;
+
+
+    let data = await jokesFetch();
+
+
+
+    writeJoke(data)
+}
+
+function writeJoke(data){ 
 
     let displayDiv = document.querySelector('#jokesDisplay'); 
 
-    displayDiv.innerText = "Hello This works";
-    console.log("THis works works");
+    displayDiv.innerText = data;
+   
 
 
 

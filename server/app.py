@@ -30,8 +30,8 @@ def hello_world():
     return jsonify('Hello, World!')
 
 
-@app.route('/v1/jokes/<en>/<cat>/<num>')
-def send_jokess():
+@app.route('/v1/jokes/<en>', methods=['GET'])
+def send_jokess(en):
     return jsonify("12345")
 
 

@@ -19,7 +19,7 @@ def hello_world():
 @app.route('/v1/jokes/<cat>/<lang>/<num>', methods=['GET'])
 def send_jokess(cat, lang):
 
-    jokes = {}
+    jokes = []
  
     jokes.append(pyjokes.get_joke(lang, cat))
 

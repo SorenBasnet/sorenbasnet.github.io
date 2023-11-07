@@ -10,13 +10,19 @@
 </head>
 
 <body> 
+    
+    
 
     <div class="p-3 mb-2 bg-secondary text-white justify-content-around align-items-center ">
-
-    <h4 >Free Funny Jokes !</h4>
+        <div class="p-4">
+            <h1>Free Funny Jokes !</h1>
+            </div>
+   
+    <form>
+        <div class="form-group p-4">
 
     <div> 
-        <label for="categories">Categories</label>
+        <label class="mr-sm-2" for="categories">Categories</label>
         <select class="form-select"  id="categories"></select>
     </div>
     <div> 
@@ -30,13 +36,14 @@
     </div>
 
 
-<div>
-    <button onclick="pullJokes()">Make me Laugh !</button>
+<div class="d-grid gap-2 p-4">
+    <button onclick="pullJokes()" type="button" class="btn btn-primary">Make me Laugh !</button>
     </div>
 
-    <div id="jokesDisplay"> 
+    <div id="jokesDisplay" class="p-4"> 
 
-
+    </div>
+    </form>
 
     </div>
 

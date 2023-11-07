@@ -12,8 +12,10 @@ def hello_world():
     return jsonify('Hello, World! I want to tell you a joke! Use my API !')
 
 
-@app.route('/v1/jokes/<lang>/<cat>/<num>')
+@app.route('/v1/jokes')
 def send_jokess(cat, lang):
+
+    
     # jokes = []
     # jokes.append(pyjokes.get_joke(lang, cat))
     # return jsonify(jokes)

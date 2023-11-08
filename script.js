@@ -21,19 +21,23 @@ async function pullJokes(){
     let displayDiv = document.querySelector('#jokesDisplay'); 
     displayDiv.innerHTML = "";
 
-    // if(number == null){
+    if(number == null || number == 0){
 
-    //     displayDiv.innerText = 'Id Needed !';
+        displayDiv.innerText = 'Id Needed !';
 
-    // }
-    // else{
+    }
+    else{
         for(let i = 0; i < parseInt(number); i++){
             let data = await jokesFetch(language, category, number);
-            
-            writeJoke(data)
+
+            if(i+1 == id){
+
+                writeJoke(data) 
+            }
+   
             }
 
-    // }
+     }
 
    
 

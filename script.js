@@ -24,13 +24,11 @@ async function pullJokes(){
 
     if(id == ""){
 
-        console.log(0);
-
         displayDiv.innerText = 'Id Needed !';
 
     }
-   if(id == 0){ 
-        console.log(4);
+   else if(id == 0){ 
+    
         for(let i = 0; i < parseInt(number); i++){ 
             let data = await jokesFetch(language, category, number);
             writeJoke(data) 
@@ -64,7 +62,7 @@ function writeJoke(data){
     
     for (let a_data of data) {
        
-        // a_quote is a dictionary with 2 keys: quote and author
+
         let dataP = document.createElement("p");
         dataP.classList = "p";
         dataP.innerHTML = a_data

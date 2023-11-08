@@ -20,13 +20,17 @@ async function pullJokes(){
     let number = document.querySelector('#numbers').value;
     let displayDiv = document.querySelector('#jokesDisplay'); 
     displayDiv.innerHTML = "";
+    console.log(9);
 
     if(number == null){
+
+        console.log(0);
 
         displayDiv.innerText = 'Id Needed !';
 
     }
     else if(number == 0){ 
+        console.log(4);
         for(let i = 0; i < parseInt(number); i++){ 
             let data = await jokesFetch(language, category, number);
             writeJoke(data) 
@@ -36,6 +40,7 @@ async function pullJokes(){
     else{
         for(let i = 0; i < parseInt(number); i++){
             let data = await jokesFetch(language, category, number);
+
 
             if(i+1 == id){
 
@@ -65,6 +70,7 @@ function writeJoke(data){
         dataP.innerHTML = a_data
         displayDiv.appendChild(dataP);
     }
+
 
 }
 

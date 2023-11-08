@@ -17,7 +17,12 @@ def send_jokess(lang, cat, num):
 
     try:
 
-        return jsonify(pyjokes.get_joke(lang, cat))
+        jokes = [] 
+        for i in range(1, num):
+
+            jokes.append(pyjokes.get_joke(lang, cat)) 
+
+        return jsonify(jokes)
     
     except: 
 

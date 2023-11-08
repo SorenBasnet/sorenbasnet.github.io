@@ -5,9 +5,9 @@ var categories = ["all", "neutral", "chuck"];
 var languages = ["en","es","de"];
 var numbers = ["1", "5" ,"10"];
 
-async function jokesFetch(cat, lang, num){ 
+async function jokesFetch(lang, cat, num){ 
 
-    return fetch(`https://cs-jokes.onrender.com/v1/jokes/${cat}/${lang}/${num}`).then(response => response.json()).catch(error => console.error(error)); 
+    return fetch(`https://cs-jokes.onrender.com/v1/jokes/${lang}/${cat}/${num}`).then(response => response.json()).catch(error => console.error(error)); 
 
 }
 
@@ -20,16 +20,16 @@ async function pullJokes(){
     let number = document.querySelector('#numbers').value;
     let displayDiv = document.querySelector('#jokesDisplay'); 
     displayDiv.innerHTML = "";
-    console.log(9);
+    console.log(id);
 
-    if(number == null){
+    if(id == ""){
 
         console.log(0);
 
         displayDiv.innerText = 'Id Needed !';
 
     }
-    else if(number == 0){ 
+   if(id == 0){ 
         console.log(4);
         for(let i = 0; i < parseInt(number); i++){ 
             let data = await jokesFetch(language, category, number);

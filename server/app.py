@@ -18,9 +18,8 @@ def send_jokess(lang, cat, num):
     try:
 
         jokes = [] 
-        for i in range(1, num):
 
-            jokes.append(pyjokes.get_joke(lang, cat)) 
+        jokes.append(pyjokes.get_joke(lang, cat)) 
 
         return jsonify(jokes)
     

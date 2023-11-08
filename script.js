@@ -22,32 +22,37 @@ async function pullJokes(){
     displayDiv.innerHTML = "";
     console.log(id);
 
-    if(id == ""){
-
-        displayDiv.innerText = 'Id Needed !';
+    if(id != ""){ 
+        let data = await jokesFetch(language, category, id); 
 
     }
-   else if(id == 0){ 
+
+    // if(id == ""){
+
+    //     displayDiv.innerText = 'Id Needed !';
+
+    // }
+//    else if(id == 0){ 
     
         for(let i = 0; i < parseInt(number); i++){ 
             let data = await jokesFetch(language, category, number);
-            writeJoke(data) 
+            displayDiv.innerText = data[data.length -1]; 
         }
-        }
+        // }
     
-    else{
-        for(let i = 0; i < parseInt(number); i++){
-            let data = await jokesFetch(language, category, number);
+    // else{
+    //     for(let i = 0; i < parseInt(number); i++){
+    //         let data = await jokesFetch(language, category, number);
 
 
-            if(i+1 == id){
+    //         if(i+1 == id){
 
-                writeJoke(data) 
-            }
+    //             writeJoke(data) 
+    //         }
    
-            }
+    //         }
 
-     }
+    //  }
 
    
 

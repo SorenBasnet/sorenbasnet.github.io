@@ -21,11 +21,18 @@ async function pullJokes(){
     let displayDiv = document.querySelector('#jokesDisplay'); 
     displayDiv.innerHTML = "";
 
-    if(number == null || number == 0){
+    if(number == null){
 
         displayDiv.innerText = 'Id Needed !';
 
     }
+    else if(number == 0){ 
+        for(let i = 0; i < parseInt(number); i++){ 
+            let data = await jokesFetch(language, category, number);
+            writeJoke(data) 
+        }
+        }
+    
     else{
         for(let i = 0; i < parseInt(number); i++){
             let data = await jokesFetch(language, category, number);
